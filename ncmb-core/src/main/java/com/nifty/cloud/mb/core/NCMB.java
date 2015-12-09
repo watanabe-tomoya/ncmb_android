@@ -49,6 +49,8 @@ public class NCMB {
 
     /**
      * Setup SDK internals
+     * By default, SDK initialize at the Main activity.
+     * the application service component that request API in background process is required sdk initialization.
      *
      * @param context Application context
      * @param applicationKey application key
@@ -62,6 +64,8 @@ public class NCMB {
 
     /**
      * Setup SDK internals with api server host name
+     * By default, SDK initialize at the Main activity.
+     * the application service component that request API in background process is required sdk initialization.
      *
      * @param context Application context
      * @param applicationKey application key
