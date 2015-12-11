@@ -166,7 +166,7 @@ public class NCMBUser extends NCMBObject {
 
     /**
      * Check for specified provider's authentication data is linked
-     * @param provider facebook or twitter or google
+     * @param provider String "facebook" or "twitter" or "google"
      * @return Return true if authentication data is linked
      */
     public boolean isLinkedWith(String provider) {
@@ -262,7 +262,7 @@ public class NCMBUser extends NCMBObject {
 
     /**
      * Mail request of user authentication
-     *
+     * @param mailAddress mail address to be used for authentication
      * @throws NCMBException exception sdk internal or NIFTY Cloud mobile backend
      */
     public static void requestAuthenticationMail(String mailAddress) throws NCMBException {
@@ -272,7 +272,7 @@ public class NCMBUser extends NCMBObject {
 
     /**
      * Mail request of user authentication in background
-     *
+     * @param mailAddress mail address to be used for authentication
      * @param callback Callback is executed after mail signUp request
      */
     public static void requestAuthenticationMailInBackground(String mailAddress, DoneCallback callback) {
@@ -456,9 +456,9 @@ public class NCMBUser extends NCMBObject {
     }
 
     /**
-     * link specified authentication data for current user
+     * link specified authentication data
      * @param params NCMBFacebookParameters or NCMBTwitterParameters or NCMBGoogleParameters
-     * @throws NCMBException
+     * @throws NCMBException exception of sdk internal or NIFTY Cloud mobile backend
      */
     public void linkWith(Object params) throws NCMBException {
 
@@ -496,7 +496,7 @@ public class NCMBUser extends NCMBObject {
     }
 
     /**
-     * link specified authentication data asynchronously for current user
+     * link specified authentication data asynchronously
      * @param params NCMBFacebookParameters or NCMBTwitterParameters or NCMBGoogleParameters
      * @param callback Callback is executed after link or throw Exception
      */
@@ -543,6 +543,11 @@ public class NCMBUser extends NCMBObject {
         }
     }
 
+    /**
+     * unlink specified authentication data asynchronously
+     * @param provider String "facebook" or "twitter" or "google"
+     * @throws NCMBException exception of sdk internal or NIFTY Cloud mobile backend
+     */
     public void unlink(@NonNull String provider) throws NCMBException {
         JSONObject currentAuthData;
         if (provider != null && ( provider.equals("facebook") || provider.equals("twitter") || provider.equals("google"))) {
@@ -568,6 +573,11 @@ public class NCMBUser extends NCMBObject {
         }
     }
 
+    /**
+     * unlink specified authentication data asynchronously
+     * @param provider String "facebook" or "twitter" or "google"
+     * @param callback Callback is executed after unlink or throw Exception
+     */
     public void unlinkInBackground(@NonNull final String provider, final DoneCallback callback) {
 
         final JSONObject currentAuthData;
