@@ -16,4 +16,4 @@ jobs:
     - name: Build with Gradle
       run: ./ncmb-core/gradlew build
     - name: Test with Gradle
-      run: ./ncmb-core/gradlew tasks
+      run: ./ncmb-core/gradlew tasks --all
