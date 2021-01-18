@@ -9,15 +9,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      with:
-        path: ../ncmb_core
     - name: set up JDK 1.8
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
     - name: Build with Gradle
-      run: /gradlew build
+      run: ./ncmb_core/gradlew build
     - name: Test with Gradle
       uses: eskatos/gradle-command-action@v1
       with:
         arguments: test
+        path: ./ncmb_core/gradlew
