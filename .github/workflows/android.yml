@@ -16,9 +16,6 @@ jobs:
       with:
         java-version: 1.8
 
-    - name: Displays the Android dependencies of the project
-      run: ./ncmb-core/gradlew androidDependencies
-
     - name: Build with Gradle
       run: ./ncmb-core/gradlew assembleDebug
 
