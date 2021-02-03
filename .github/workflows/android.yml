@@ -19,8 +19,11 @@ jobs:
     - name: Build with Gradle
       run: ./ncmb-core/gradlew 
 
+    - name: Change Directory
+      run: cd ncmb-core
+
     - name: Test with Gradle
       uses: eskatos/gradle-command-action@v1
       with:
         arguments: tasks test --stacktrace
-        wrapper-directory: ./ncmb-core
+        wrapper-directory: ./
