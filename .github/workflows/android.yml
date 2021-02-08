@@ -17,13 +17,10 @@ jobs:
         java-version: 1.8
 
     - name: Build with Gradle
-      run: ./ncmb-core/gradlew 
+      run: ./ncmb-core/gradlew build
 
     - name: Change Directory
       run: cd ncmb-core
 
     - name: Test with Gradle
-      uses: eskatos/gradle-command-action@v1
-      with:
-        arguments: tasks test --stacktrace
-        wrapper-directory: ./gradlew
+      run: ./gradlew test --stacktrace
