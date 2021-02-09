@@ -22,5 +22,8 @@ jobs:
     - name: Change Directory
       run: cd ncmb-core
 
+    - name: pwd
+      run: pwd
+
     - name: Test with Gradle
       run: ./gradlew test
