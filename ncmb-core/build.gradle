@@ -73,6 +73,5 @@ task makeJar(type: Copy) {
     include('classes.jar')
     rename('classes.jar', JAR_NAME)
 }
-task test() {}
-makeJar.dependsOn(clearJar, build, test)
+makeJar.dependsOn(clearJar, build)
 
