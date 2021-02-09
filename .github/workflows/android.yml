@@ -19,5 +19,8 @@ jobs:
     - name: Build with Gradle
       run: ./ncmb-core/gradlew build
 
+    - name: Change Directory
+      run: cd ncmb-core
+
     - name: Test with Gradle
-      run: ./ncmb-core/gradlew build test --stacktrace
+      run: ./gradlew test
