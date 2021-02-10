@@ -17,4 +17,4 @@ jobs:
         java-version: 1.8
 
     - name: Change Directory
-      run: cd ncmb-core && pwd && ./gradlew build test
+      run: cd ncmb-core && ./gradlew build test --continue --info
